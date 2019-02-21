@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>BorrisMitM</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel= "stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "script.js"></script>
+</head>
+
+<body>
+    <header>
+      Borris <br>
+      Mit <br>
+      M
+    </header>
+
+    <div id="container">
+    <form name = "quizForm" onsubmit="submitAnswers()">
+      <input type="text" name = "name" placeholder="Your name"> <br><br>
+
+    <fieldset>
+      <legend>ist js ne scriptsprache?</legend>
+
+      <input type="radio" name="scriptsprache" value = 1
+      <label>ja</label>
+      <input type="radio" name="scriptsprache" value = 0
+      <label>nein</label>
+
+    </fieldset>
+    <fieldset>
+      <legend>h1 tag?</legend>
+
+      <input type="radio" name="h1tag" value = 0
+      <label>große überschrift</label><br>
+      <input type="radio" name="h1tag" value = 1
+      <label>fett gedruckt</label><br>
+      <input type="radio" name="h1tag" value = 2
+      <label>durchgestrichen</label><br>
+      <input type="radio" name="h1tag" value = 3
+      <label>kleine unterschrift</label><br>
+
+    </fieldset>
+    <fieldset>
+      <legend>css?</legend>
+
+      <input type="radio" name="csstag" value = 0
+      <label>bla</label><br>
+      <input type="radio" name="csstag" value = 1
+      <label>blu</label><br>
+      <input type="radio" name="csstag" value = 2
+      <label>cascading style sheet</label><br>
+      <input type="radio" name="csstag" value = 3
+      <label>schmu</label><br>
+
+    </fieldset>
+    <fieldset>
+      <legend>hinweis in js?</legend>
+
+      <input type="radio" name="csstag" value = 0
+      <label>falsch</label><br>
+      <input type="radio" name="csstag" value = 1
+      <label>documents?</label><br>
+      <input type="radio" name="csstag" value = 2
+      <label>alert("Hinweis")</label><br>
+
+    </fieldset>
+    <br>
+    <input type = "submit" value = "Antwort abschicken"
+    </form>
+    <footer>
+      <p><a href =""> Impressum</a><p>
+    </footer>
+</div>
+
+<script>
+  document.GetElementById("submitbutton").onclick = function(){
+    submit;
+  }
+
+
+</script>
+</body>
+</html>

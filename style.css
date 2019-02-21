@@ -1,0 +1,22 @@
+body{
+  background-color: #5f00f1;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+}
+header{
+  font-family: 'Arial';
+  text-align: center;
+  border: #fff dotted 4px;
+}
+#container{
+  background-color: #008f84;
+  width: 70%;
+  margin: 15px auto;
+}
+input[type ='submit']{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 12px 12px;
+  height: 30px;
+}
