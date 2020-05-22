@@ -73,6 +73,9 @@ h1{
   font-size: 250%;
   text-shadow: 0 0 10px rgb(0, 0, 0);
 }
+#word{
+  word-wrap: break-word;
+}
 #accordion1 .ui-accordion-header{
   height: 15vh;
   display: flex;
@@ -81,8 +84,9 @@ h1{
 }
 
 #accordion1 .ui-accordion-content{
-  font-size:14px;
   background-image:none;
+  margin-top: 0%;
+  margin-bottom: 10px;
 }
 #accordion2 .ui-accordion-header{
   height: 15vh;
@@ -103,6 +107,6 @@ h1{
 }
 
 #accordion3 .ui-accordion-content{
-  font-size:12px;
+  font-size:16px;
   background-image:none;
 }
