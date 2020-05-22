@@ -74,7 +74,7 @@ h1{
   text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 #accordion1 .ui-accordion-header{
-  height: 150px;
+  height: 15vh;
   display: flex;
   justify-content: center;
   border-radius: 8px;
@@ -85,7 +85,7 @@ h1{
   background-image:none;
 }
 #accordion2 .ui-accordion-header{
-  height: 150px;
+  height: 15vh;
   display: flex;
   justify-content: center;
   border-radius: 8px;
@@ -96,7 +96,7 @@ h1{
   background-image:none;
 }
 #accordion3 .ui-accordion-header{
-  height: 150px;
+  height: 15vh;
   display: flex;
   justify-content: center;
   border-radius: 8px;
