@@ -1,22 +1,89 @@
 body{
-  background-color: #5f00f1;
+  background-color: #FFFFFF;
   font-family: "Arial", sans-serif;
-  color: #fff;
+  color: #000000;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  max-width: 1000px;
 }
 header{
   font-family: 'Arial';
-  text-align: center;
-  border: #fff dotted 4px;
+  text-align: left;
+  color:rgb(0, 0, 0) ;
 }
-#container{
-  background-color: #008f84;
-  width: 70%;
-  margin: 15px auto;
+#introText{
+  text-align: left;
+  text-emphasis: none;
 }
-input[type ='submit']{
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  padding: 12px 12px;
-  height: 30px;
+#kupe{
+  background-image:url(/images/KUPE.png);
+  background-position: center;
+  background-size: cover;
+}
+#sideeffects{
+  background-image:url(/images/Sideeffects.png);
+  background-position: center;
+  background-size: cover;
+}
+#curruption{
+  background-image:url(/images/Corruption.png);
+  background-position: center;
+  background-size: 100% 100%;
+}
+#adventure{
+  background-image:url(/images/aaAdventure.png);
+  background-position: center;
+  background-size: 100% 100% ;
+}
+#ksda{
+  background-image:url(/images/KSDA.png);
+  background-position: center;
+  background-size: cover;
+}
+#internity{
+  background-image:url(/images/Internity.png);
+  background-position: center;
+  background-size: 100% 100%;
+}
+#rwth{
+  background-image:url(/images/rwth.png);
+  background-position: center;
+  background-size: 100% 100%;
+}
+#accordion-header{
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 300%;
+  text-shadow: 0 0 10px black;
+}
+#accordion1 .ui-accordion-header{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+#accordion1 .ui-accordion-content{
+  font-size:14px;
+  background-image:none;
+}
+#accordion2 .ui-accordion-header{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+#accordion2 .ui-accordion-content{
+  font-size:14px;
+  background-image:none;
+}
+#accordion3 .ui-accordion-header{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+#accordion3 .ui-accordion-content{
+  font-size:14px;
+  background-image:none;
 }

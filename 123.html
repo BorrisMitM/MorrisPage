@@ -8,81 +8,109 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel= "stylesheet" type="text/css" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src = "script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">-->
+    <script>
+        $(document).ready(function () {
+          $( "#accordion1" ).accordion({
+            active: false,
+            collapsible: true
+          });
+        } );
+        </script>
+        <script>
+          $(document).ready(function () {
+            $( "#accordion2" ).accordion({
+              active: false,
+              collapsible: true
+            });
+          } );
+          </script>
+        <script>
+          $(document).ready(function () {
+            $( "#accordion3" ).accordion({
+              active: false,
+              collapsible: true
+            });
+          } );
+          </script>
 </head>
 
 <body>
     <header>
-      Borris <br>
-      Mit <br>
-      M
+        <h2>Hi there!</h1>
+        <div id = "introText">
+            My name is Maurice and I’m a game programmer.
+            Currently studying at Cologne Game Lab after finishing a bachelors degree in electrical engineering.
+            Here you can find projects I worked on.
+            While I am using Unity3D for most of my projects. I also have some experience in coding and tutoring C++.
+        </div>
     </header>
-
-    <div id="container">
-    <form name = "quizForm" onsubmit="submitAnswers()">
-      <input type="text" name = "name" placeholder="Your name"> <br><br>
-
-    <fieldset>
-      <legend>ist js ne scriptsprache?</legend>
-
-      <input type="radio" name="scriptsprache" value = 1
-      <label>ja</label>
-      <input type="radio" name="scriptsprache" value = 0
-      <label>nein</label>
-
-    </fieldset>
-    <fieldset>
-      <legend>h1 tag?</legend>
-
-      <input type="radio" name="h1tag" value = 0
-      <label>große überschrift</label><br>
-      <input type="radio" name="h1tag" value = 1
-      <label>fett gedruckt</label><br>
-      <input type="radio" name="h1tag" value = 2
-      <label>durchgestrichen</label><br>
-      <input type="radio" name="h1tag" value = 3
-      <label>kleine unterschrift</label><br>
-
-    </fieldset>
-    <fieldset>
-      <legend>css?</legend>
-
-      <input type="radio" name="csstag" value = 0
-      <label>bla</label><br>
-      <input type="radio" name="csstag" value = 1
-      <label>blu</label><br>
-      <input type="radio" name="csstag" value = 2
-      <label>cascading style sheet</label><br>
-      <input type="radio" name="csstag" value = 3
-      <label>schmu</label><br>
-
-    </fieldset>
-    <fieldset>
-      <legend>hinweis in js?</legend>
-
-      <input type="radio" name="csstag" value = 0
-      <label>falsch</label><br>
-      <input type="radio" name="csstag" value = 1
-      <label>documents?</label><br>
-      <input type="radio" name="csstag" value = 2
-      <label>alert("Hinweis")</label><br>
-
-    </fieldset>
-    <br>
-    <input type = "submit" value = "Antwort abschicken"
-    </form>
-    <footer>
-      <p><a href =""> Impressum</a><p>
-    </footer>
-</div>
-
-<script>
-  document.GetElementById("submitbutton").onclick = function(){
-    submit;
-  }
-
-
-</script>
+    <h2>Student Projects</h2>
+    <div id="accordion1">
+        <div id = "kupe">
+          <h3 id = "accordion-header">
+            K.U.P.E
+          </h3>
+        </div>
+        <div>
+          <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+        </div>
+        <div id = "sideeffects">
+          <h3 id = "accordion-header">
+            Sideeffects of Being Human
+          </h3>
+        </div>
+        <div>
+          <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+        </div>
+        <div id = "curruption">
+          <h3 id = "accordion-header">
+            
+          </h3>
+        </div>
+        <div>
+          <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+        </div>
+        <div id = "adventure">
+          <h3 id = "accordion-header">
+            
+          </h3>
+        </div>
+        <div>
+          <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+        </div>
+      </div>
+      <h2>Game Jam Games</h2>
+      <div id="accordion2">
+        <div id = "ksda">
+          <h3 id = "accordion-header">
+            Keyboard Surf Dinosaur Attack
+          </h3>
+        </div>
+        <div>
+          <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+        </div>
+        <div id = "internity">
+          <h3 id = "accordion-header">
+            
+          </h3>
+        </div>
+        <div>
+          <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+        </div>
+      </div>
+      <h2>Other</h2>
+      <div id="accordion3">
+        <div id = "rwth">
+          <h3 id = "accordion-header">
+          </h3>
+        </div>
+        <div>
+          <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+        </div>
+      </div>
+      </div>
 </body>
 </html>
