@@ -1,7 +1,7 @@
 body{
-  background-color: #FFFFFF;
+  background-color: #23395B;
   font-family: "Arial", sans-serif;
-  color: #000000;
+  color: #FFFFFF;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
@@ -10,11 +10,27 @@ body{
 header{
   font-family: 'Arial';
   text-align: left;
-  color:rgb(0, 0, 0) ;
+  color:#FFFFFF ;
+  margin-bottom: 20%;
+}
+h1{
+  margin-top: 10%;
+  text-shadow: 0 0 100px rgb(0, 0, 0);
+}
+#hithere{
+  margin-top: 20%;
 }
 #introText{
   text-align: left;
   text-emphasis: none;
+  width: 70%;
+  margin-top: 10%;
+}
+#goodlookin{
+  float: right;
+  width: 25%;
+  border: 3px solid #545E75
+  ;
 }
 #kupe{
   background-image:url(/images/KUPE.png);
@@ -54,13 +70,14 @@ header{
 #accordion-header{
   align-self: center;
   color: #FFFFFF;
-  font-size: 300%;
-  text-shadow: 0 0 10px black;
+  font-size: 250%;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 #accordion1 .ui-accordion-header{
   height: 150px;
   display: flex;
   justify-content: center;
+  border-radius: 8px;
 }
 
 #accordion1 .ui-accordion-content{
@@ -71,6 +88,7 @@ header{
   height: 150px;
   display: flex;
   justify-content: center;
+  border-radius: 8px;
 }
 
 #accordion2 .ui-accordion-content{
@@ -81,9 +99,10 @@ header{
   height: 150px;
   display: flex;
   justify-content: center;
+  border-radius: 8px;
 }
 
 #accordion3 .ui-accordion-content{
-  font-size:14px;
+  font-size:12px;
   background-image:none;
 }
