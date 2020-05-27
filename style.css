@@ -82,6 +82,13 @@ h1{
     background-image:url(/images/Small/RWTH_klein.png);
     background-position: center;
   }
+  #iframeInAcc{
+    width: 700px;
+    height: 700px;
+    
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 @media screen and (min-width: 1300px){
   #middlepart{
@@ -122,6 +129,13 @@ h1{
   #rwth{
     background-image:url(/images/Medium/rwth_mittel.png);
     background-position: center;
+  }
+  #iframeInAcc{
+    width: 1060px;
+    height: 700px;
+    
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 @media screen and (min-width: 1600px){
