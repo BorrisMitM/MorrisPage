@@ -89,6 +89,7 @@ h1{
     margin-right: auto;
     margin-left: auto;
   }
+  
 }
 @media screen and (min-width: 1300px){
   #middlepart{
@@ -196,7 +197,7 @@ h1{
   word-wrap: break-word;
 }
 #accordion1 .ui-accordion-header{
-  height: 15vh;
+  height: 258px;
   display: flex;
   justify-content: center;
   border-radius: 8px;
@@ -213,7 +214,7 @@ h1{
   margin-right: 5%;
 }
 #accordion2 .ui-accordion-header{
-  height: 15vh;
+  height: 258px;
   display: flex;
   justify-content: center;
   border-radius: 8px;
@@ -229,7 +230,7 @@ h1{
   margin-right: 5%;
 }
 #accordion3 .ui-accordion-header{
-  height: 15vh;
+  height: 258px;
   display: flex;
   justify-content: center;
   border-radius: 8px;
