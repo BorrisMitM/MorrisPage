@@ -9,6 +9,7 @@
         </div>
       </div>
       <p><br>{{ project.summary }}</p>
+      <p>My takeaways from this project were:</p>
       <div class="contributionContainer">
         <div v-for="contribution in project.contributions"  v-bind:key="contribution" class="contribution">
           <p>-  {{ contribution }}</p>
@@ -21,23 +22,26 @@
 <script>
 import { ref } from 'vue'
 import allProjects from '@/data/projects.js'
+import allHobbyProjects from '@/data/hobbyProjects.js'
+import allStudentProjects from '@/data/studentProjects.js'
 
 export default {
   setup () {
     const projects = ref(allProjects)
-    return { projects }
+    const hobbyProjects = ref(allHobbyProjects)
+    const studentProjects = ref(allStudentProjects)
+    return { projects, hobbyProjects, studentProjects }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 .wrapper {
   display:flex;
   flex-direction: column;
-  max-width: 1200px;
   margin: 0 auto;
-  border: 3px solid;
-  border-radius: .5rem;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .project {
@@ -45,6 +49,9 @@ export default {
   border-radius: .5rem;
   padding: 1rem;
   margin-top: 2rem;
+  img {
+    float: center;
+  }
 }
 .project p:first-child {
   font-weight: bold;
@@ -52,8 +59,8 @@ export default {
   margin: 1rem 0;
 }
 .project p:last-child {
-  font-style: italic;
-  font-size: .8rem;
+  font-weight:normal;
+  font-size: 1rem;
 }
 
 .project:nth-child(odd) {
@@ -88,16 +95,29 @@ export default {
   width: fit-content;
   height: 1rem;
   padding: 5px;
+  margin: 5px;
   float: left;
+  border-radius: 10px;
+  color:  rgb(255, 255, 255);
+  text-shadow: 1px 1px #505050;
 }
 .tagUnity{
-  background-color: blue;
+  background-color: rgb(92, 146, 255);
 }
 .tagUniversity{
-  background-color: red;
+  background-color: rgb(187, 51, 51);
 }
-.tagC\#{
-  background-color: rgb(43, 255, 0);
+.tagWebGL{
+  background-color: rgb(35, 176, 223);
+}
+.tagReleased{
+  background-color: rgb(35, 223, 107);
+}
+.tagProfessional{
+  background-color: rgb(176, 35, 223);
+}
+.tagHobby{
+  background-color: rgb(220, 35, 223);
 }
 .contributionContainer{
   margin: 0 auto;
