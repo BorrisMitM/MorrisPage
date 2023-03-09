@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img alt="Vue logo" src="../assets/MorrisStylized.png" height="50">
+    <img alt="Vue logo" src="@/assets/MorrisStylized.png" height="50">
     <p>Morris</p>
     <nav>
       <ul>
