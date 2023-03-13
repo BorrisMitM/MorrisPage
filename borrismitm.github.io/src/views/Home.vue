@@ -1,19 +1,19 @@
 <template>
   <div class="wrapper">
-    <div v-for="project in projects" :key="project.abbreviation" class="project">
+    <div v-for="project in projects" :key="project.abbreviation" class="project" :id="'project' + project.abbreviation">
       <p class="projectTitle">{{ project.name }}</p>
       <img :alt="project.name + ' logo'" :src="require('../assets/' + project.image)" height="600">
-      <div class="tagContainer">
+      <div class="tagContainer" v-if="project.tags">
         <div v-for="tag in project.tags"  v-bind:key="tag" v-bind:class="'tag tagBorder tag' + tag">
           {{ tag }}
         </div>
       </div>
-      <div class="tagContainer">
+      <div class="tagContainer" v-if="project.trailer||project.link">
         <a class="tag" v-if="project.trailer" :href="project.trailer" target="_blank">Trailer</a>
         <a class="tag" v-if="project.link" :href="project.link" target="_blank">Play</a>
       </div>
       <p class="projectText"><br>{{ project.summary }}</p>
-      <p class="projectText">My contributions and takeaways from this project are:</p>
+      <p v-if="project.contributions" class="projectText">My contributions and takeaways from this project are:</p>
       <div class="contributionContainer">
         <div v-for="contribution in project.contributions"  v-bind:key="contribution" class="contribution">
           <p>-  {{ contribution }}</p>
@@ -53,7 +53,7 @@ export default {
   border-radius: .5rem;
   padding: 1rem;
   margin-top: 2rem;
-  width: 60%;
+  width: 40%;
   min-width: 584px;
   img {
     float: center;
@@ -66,10 +66,10 @@ export default {
 }
 
 .project:nth-child(odd) {
-  align-self: flex-start;
+  align-self: flex-end;
 }
 .project:nth-child(even) {
-  align-self: flex-end;
+  align-self: flex-start;
 }
 
 @media (max-width: 790px) {
@@ -105,7 +105,7 @@ export default {
   color:  rgb(255, 255, 255);
   border-radius: 10px;
   border: 2px solid rgb(111, 111, 111);
-  text-shadow: 1px 1px #505050;
+  //text-shadow: 1px 1px #505050;
 }
 .tagUnity{
   background-color: rgb(92, 146, 255);

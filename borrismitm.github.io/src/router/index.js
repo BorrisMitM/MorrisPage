@@ -11,12 +11,12 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
+    path: '/#projectOMW',
     name: 'About',
     component: About
   },
   {
-    path: '/projects/:projectName',
+    path: '/#projectOMW',
     name: 'Project',
     component: Project
   },

@@ -1,11 +1,21 @@
 export default [
   {
+    name: 'Maurice Andreas, Game Programmer',
+    abbreviation: 'Mo',
+    image: 'Morris.jpeg',
+    trailer: '',
+    link: '',
+    summary: 'After finishing my studies in electrical engineering, I graduated in 2022 with a degree in Digital Games with a focus on programming at the Cologne Game Lab. Afterwards I worked for neoludic, where I developed a prototype for Tiny Bookshop, and for the Cologne Game Lab, where I developed an AR learning experience for masonry students. My two favorite topics are gameplay programming and procedural generation, but I also have extensive experience in tool and system development. You can find a selection of projects I have worked on below. Enjoy your stay on my portfolio!',
+    tags: '',
+    contributions: ''
+  },
+  {
     name: 'On My Way',
     abbreviation: 'OMW',
     image: 'OMW.png',
     trailer: '',
-    link: '',
-    summary: 'On My Way started as a student project for the Cologne Game Lab and after the semester finished Green Erasmus decided to continue development with the team. I took over the programming role and worked simultaneously on On My Way and Small Steps. The game is about ecological travel and shines light on the different modes of transportation and their impact on the environment.',
+    link: 'https://www.greenerasmus.org/on-my-way',
+    summary: 'On My Way started as a student project for the Cologne Game Lab and after the semester finished Green Erasmus decided to continue development with the team. I took over the programming role and worked simultaneously on On My Way and Small Steps. The game is about ecological traveling and highlights on the different modes of transportation and their impact on the environment.',
     tags: ['Unity', 'University', 'WebGL', 'Released', 'Professional'],
     contributions: ['Dynamic UI programming', 'Save/Load system', 'Unity\'s integrated localization system', 'Took over the project after the student phase and had to work with a foreign code base']
   },
@@ -14,8 +24,8 @@ export default [
     abbreviation: 'SS',
     image: 'SmallSteps.png',
     trailer: '',
-    link: '',
-    summary: 'Small Steps also started as a student project at the Cologne Game Lab. We also continued developing it after the semester together with Green Erasmus. The game is about Nova who is on their Erasmus exchange year and discovers a weird parallel world in which no environmental awareness exists. They then help their counterpart in the other world to implement some ecological behaviors. You can play it here.',
+    link: 'https://www.greenerasmus.org/small-steps',
+    summary: 'Small Steps also started as a student project at the Cologne Game Lab. We also continued to develop it after the semester together with Green Erasmus. The game is about Nova who is on their Erasmus exchange year and discovers a weird parallel world in which no environmental awareness exists. They then help their counterpart in the other world to implement some ecological behaviors. You can play it here.',
     tags: ['Unity', 'University', 'WebGL', 'Released', 'Professional'],
     contributions: ['Content creation tools for designers', 'Timeline extensions', 'Custom dialog system including localization']
   },
@@ -25,7 +35,7 @@ export default [
     image: 'TrinityTactics2.png',
     trailer: 'https://www.youtube.com/watch?v=Pkf2NudyDTQ',
     link: 'https://kawanka.itch.io/trinity-tactics',
-    summary: 'Trinity Tactics is a small turn-based, multiplayer tactics game that I developed together with my friend Florian Erhard. The twist is that turns play at the same time for both players and that you can adjust the stats of your units on the fly.',
+    summary: 'Trinity Tactics is a small turn-based, multiplayer tactics game that I developed together with my friend Florian Erhard. The twist is that turns play out at the same time for both players and that you can adjust the stats of your units on the fly.',
     tags: ['Unity', 'WebGL', 'Released', 'Hobby'],
     contributions: ['Multiplayer using Photon', 'Gamestate machine', 'The terrain generation was my bachelor thesis and combines different approaches like graph grammars, perlin noise and cellular automata.', 'Tried out a way of balancing maps by evaluating the generated map and dividing spawn areas for players based on the evaluation.']
   },
@@ -35,7 +45,7 @@ export default [
     image: 'MI2.png',
     trailer: '',
     link: '',
-    summary: 'A small virutal exibition for the Kulturbunker Köln-Mülheim. Here visitors could expirience an exibition online while physical exhibitions where not possible.',
+    summary: 'A small virtual exhibition for the Kulturbunker Köln-Mülheim. Here visitors could experience an art gallery online while physical exhibitions were not possible.',
     tags: ['Unity', 'WebGL', 'Released', 'Professional'],
     contributions: ['Custom first person controller focussed on easy navigation and special focus on viewing pictures']
   },
@@ -45,7 +55,7 @@ export default [
     image: 'CATM2.png',
     trailer: 'https://www.youtube.com/watch?v=rC1HDWFL9fw',
     link: '',
-    summary: 'During my internship at Tritrie Games I worked on the prototype for the 2D platformer Cage Against The Machine.',
+    summary: 'During my internship at Tritrie Games, I worked on the prototype of the 2D platformer Cage Against The Machine. This was especially exciting for me because I was able to take the time to learn the ins and outs of Unreal Engine.',
     tags: ['Unreal', 'Professional', 'C++'],
     contributions: ['First Unreal project', 'Learned both Blueprints and C++', 'Used the GameplayAbility system', 'Rapidly prototyped different platformer mechanics', 'Polished the character controller', 'Worked on custom shaders to try out different looks', 'Dynamic background music system that changed the intensity depending on the state of the game.']
   },
@@ -55,7 +65,7 @@ export default [
     image: 'Sideeffects2.png',
     trailer: 'https://player.vimeo.com/video/423105907',
     link: '',
-    summary: 'A narrative puzzle adventure made in the project phase of my 2nd semester at the Cologne Game Lab. It is about Glenn, a Fae, who tries to understand human emotions. They do it in an unconventional way: steal emotions from humans in theirs dreams.',
+    summary: 'A narrative puzzle adventure created during the project phase of my 2nd semester at the Cologne Game Lab. It is about Glenn, a Fae who tries to understand human emotions. They do this in an unconventional way: by stealing emotions from humans in their dreams.',
     tags: ['Unity', 'University'],
     contributions: ['First interactions with shaders in Unity', 'Used the dialog system Articy Draft', 'Created the background music for the game.']
   },
@@ -65,7 +75,7 @@ export default [
     image: 'aaA.png',
     trailer: 'https://www.youtube.com/watch?v=oErz554aaQM&t=1s',
     link: 'https://frzkbl.itch.io/aaadventure',
-    summary: 'aaAdventrue is an arcade game collection that features 4 little games, which focus on your microphone as the only input control! It was made during my 4th semester at the Cologne Game Lab. Also my first game that was made completely remote due to known events.',
+    summary: 'aaAdventrue is an arcade game collection that features 4 little games that focus on your microphone as the only input control! It was made during my 4th semester at the Cologne Game Lab. Also my first game that was made completely remotely due to known events.',
     tags: ['Unity', 'University', 'Released'],
     contributions: ['Using my knowledge about signal processing from my electrical engineering background to create games', 'Getting speech recognition to work properly in a time dependent environment', 'Dungeon generation for one of the minigames using a random depth first search with recursive backtracker algorithm', 'Created the background music for the game']
   },
@@ -75,7 +85,7 @@ export default [
     image: 'KUPE.png',
     trailer: 'https://player.vimeo.com/video/421673307',
     link: '',
-    summary: 'K.U.P.E is a couch-coop 2.5D puzzle platformer, which was created in the first semester at Cologne Game Lab. It was an abitions project for the given time frame and contained 4 different characters with different abilities. From swinging on ropes, over dashing and gliding to rolling fast. But that\'s not all. The characters where able to combine their abilities for improved effectiveness.',
+    summary: 'K.U.P.E. is a couch co-op 2.5D puzzle platformer that was created during my first semester at the Cologne Game Lab. It was an ambitious project for the given timeframe and included 4 different characters with different abilities. From swinging on ropes, to dashing and gliding to rolling fast. But that\'s not all. The characters were able to combine their abilities for improved effectiveness.',
     tags: ['Unity', 'University'],
     contributions: ['Controller for each character', 'Ability combinations and their interactions with the environment', 'I learned what the term scope means, and what you can realistically create in a given time frame of 6 weeks', 'Camera system that keeps every player inside of the view', 'How animations need to be structured for responsive platformer controls']
   }
