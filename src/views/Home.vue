@@ -9,8 +9,8 @@
         </div>
       </div>
       <div class="tagContainer" v-if="project.trailer||project.link">
-        <a class="tag" v-if="project.trailer" :href="project.trailer" target="_blank">Trailer</a>
-        <a class="tag" v-if="project.link" :href="project.link" target="_blank">Play</a>
+        <a class="tag link" v-if="project.trailer" :href="project.trailer" target="_blank">Trailer</a>
+        <a class="tag link" v-if="project.link" :href="project.link" target="_blank">Play</a>
       </div>
       <p class="projectText"><br>{{ project.summary }}</p>
       <p v-if="project.contributions" class="projectText">My contributions and takeaways from this project are:</p>
@@ -49,17 +49,19 @@ export default {
 }
 
 .project {
-  border: 3px solid;
+  border: 1px solid;
   border-radius: .5rem;
   padding: 1rem;
   margin-top: 2rem;
   width: 40%;
   min-width: 584px;
+  background-image: url("@/assets/Panel.png");
+  scroll-margin-top: 90px;
   img {
     float: center;
     max-width: 100%;
     height: auto;
-    border: 3px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 12px;
     background-color: #dedede;
   }
@@ -87,6 +89,8 @@ export default {
 
 .projectText {
   text-align: left;
+  max-width: 530px;
+  display: inline-block;
 }
 .tagContainer{
   margin: 0 auto;
@@ -132,11 +136,23 @@ export default {
   background-color: rgb(76, 129, 63);
 }
 .contributionContainer{
-  float:left;
   margin: 0 auto;
-  max-width: 440px;
+  display: inline-block;
+  max-width: 530px;
+  text-align: left;
 }
 .contribution{
   text-align: left;
+}
+.link{
+  font-size: xx-large;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+  color: white !important;
+}
+.link:visited {
+  color: inherit;
 }
 </style>

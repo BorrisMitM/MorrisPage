@@ -16,14 +16,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-display: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background-color: rgb(255, 250, 199);
+  color: #000000;
+  //background-color: rgb(255, 250, 199);
+  background-image: url("@/assets/Background.png");
 }
 </style>
