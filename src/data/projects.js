@@ -15,7 +15,7 @@ export default [
     image: 'OMW.png',
     trailer: '',
     link: 'https://www.greenerasmus.org/on-my-way',
-    summary: 'On My Way started as a student project for the Cologne Game Lab and after the semester finished Green Erasmus decided to continue development with the team. I took over the programming role and worked simultaneously on On My Way and Small Steps. The game is about ecological traveling and highlights on the different modes of transportation and their impact on the environment.',
+    summary: 'On My Way started as a student project for the Cologne Game Lab and after the semester finished. Green Erasmus decided to continue development with the team. I took over the programming role and worked simultaneously on On My Way and Small Steps. The game is about ecological traveling and highlights on the different modes of transportation and their impact on the environment.',
     tags: ['Unity', 'University', 'WebGL', 'Released', 'Professional'],
     contributions: ['Dynamic UI programming', 'Save/Load system', 'Unity\'s integrated localization system', 'Took over the project after the student phase and had to work with a foreign code base']
   },

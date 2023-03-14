@@ -8,9 +8,9 @@
           {{ tag }}
         </div>
       </div>
-      <div class="tagContainer" v-if="project.trailer||project.link">
-        <a class="tag link" v-if="project.trailer" :href="project.trailer" target="_blank">Trailer</a>
-        <a class="tag link" v-if="project.link" :href="project.link" target="_blank">Play</a>
+      <div class="linkContainer" v-if="project.trailer||project.link">
+        <a class="link" v-if="project.trailer" :href="project.trailer" target="_blank">Trailer</a>
+        <a class="link" v-if="project.link" :href="project.link" target="_blank">Play</a>
       </div>
       <p class="projectText"><br>{{ project.summary }}</p>
       <p v-if="project.contributions" class="projectText">My contributions and takeaways from this project are:</p>
@@ -93,10 +93,9 @@ export default {
   display: inline-block;
 }
 .tagContainer{
-  margin: 0 auto;
-  float: center;
+  margin: auto;
   width: fit-content;
-  height: 2rem;
+  height: 50px;
 }
 .tag{
   width: fit-content;
@@ -144,15 +143,19 @@ export default {
 .contribution{
   text-align: left;
 }
+
+.linkContainer{
+  margin-top: 10px;
+}
 .link{
+  margin: 0 10px;
+  padding: 4px;
   block-size: auto;
   font-size: xx-large;
   text-decoration: none;
   color: grey;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 7px;
-  margin-bottom: -25px;
-  margin-top: 10px;
 }
 .link:hover {
   text-decoration: underline;
