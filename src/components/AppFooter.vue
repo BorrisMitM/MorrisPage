@@ -33,7 +33,7 @@ footer{
   border: 1px solid black;
 }
 .socialLink{
-  height: 70px;
+  height: 64px;
   padding-left: 20px;
   padding-right: 20px;
   text-align:center;
@@ -41,7 +41,10 @@ footer{
     margin: 50px;
   }
   img {
-    height: 70px;
+    height: 64px;
+  }
+  img:hover {
+    filter:brightness(120%);
   }
 }
 </style>

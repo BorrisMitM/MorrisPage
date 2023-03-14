@@ -24,29 +24,23 @@ header {
   //background-color: rgba(128,128,128,0.7);
   background-image: url("@/assets/Header2.png");
   background-size: contain;
-  p {
-    margin-left: 1rem;
-  }
-  img {
-    float: left;
-    height: 50px;
-    opacity: 100%;
-    border: 2px solid white;
-    border-radius: 3px;
-  }
 }
 
 nav {
-  margin-left: auto;
-  float: center;
-  height: 30px;
+  display:inline-block;
+  height: 50px;
   color: grey;
   position: top;
 
+  ul{
+    padding-inline-start: 0px;
+  }
   ul a {
     font-size: xx-large;
-    margin-left: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     text-decoration: none;
+    color:grey;
   }
   ul:hover a:hover {
     text-decoration: underline;

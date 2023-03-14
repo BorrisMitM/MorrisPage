@@ -145,14 +145,20 @@ export default {
   text-align: left;
 }
 .link{
+  block-size: auto;
   font-size: xx-large;
   text-decoration: none;
+  color: grey;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 7px;
+  margin-bottom: -25px;
+  margin-top: 10px;
 }
 .link:hover {
   text-decoration: underline;
   color: white !important;
 }
 .link:visited {
-  color: inherit;
+  color: grey;
 }
 </style>
