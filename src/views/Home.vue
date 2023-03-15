@@ -85,6 +85,7 @@ export default {
   font-weight: bold;
   font-size: 2.5rem;
   margin: 1rem 0;
+  overflow: break-word;
 }
 
 .projectText {
@@ -94,15 +95,14 @@ export default {
 }
 .tagContainer{
   margin: auto;
-  width: fit-content;
-  height: 50px;
+  display: block;
 }
 .tag{
   width: fit-content;
   height: 1rem;
   padding: 5px;
   margin: 5px;
-  float: left;
+  display: inline-flex;
 }
 .tagBorder{
   color:  rgb(255, 255, 255);
@@ -135,8 +135,8 @@ export default {
   background-color: rgb(76, 129, 63);
 }
 .contributionContainer{
+  display: block;
   margin: 0 auto;
-  display: inline-block;
   max-width: 530px;
   text-align: left;
 }

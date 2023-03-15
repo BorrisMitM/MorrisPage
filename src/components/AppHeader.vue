@@ -2,11 +2,13 @@
   <header>
     <!-- <img alt="Morris logo" src="@/assets/MorrisStylized.png"> -->
     <nav>
-      <ul>
+      <div>
         <a href="#">Home</a>
-        <a href="#projectOMW">Projects</a>
+        <div></div>
+        <a href="#projectTBS">Projects</a>
+        <div></div>
         <a href="#footer">Contact</a>
-      </ul>
+      </div>
     </nav>
   </header>
 </template>
@@ -20,33 +22,38 @@ header {
   position:sticky;
   top: 0;
 
-  padding: .5rem 1rem;
+  padding: .5rem 0rem;
   //background-color: rgba(128,128,128,0.7);
   background-image: url("@/assets/Header2.png");
   background-size: contain;
 }
 
 nav {
-  display:inline-block;
-  height: 50px;
-  color: grey;
-  position: top;
-
-  ul{
-    padding-inline-start: 0px;
+  div{
+    height: 50px;
+    color: grey;
+    display:flex;
+    justify-content: center;
   }
-  ul a {
-    font-size: xx-large;
-    margin-left: 1rem;
-    margin-right: 1rem;
+  div div{
+    width: 3rem;
+    flex-shrink: 30;
+  }
+
+  div a {
+    padding-top: 10px;
+    font-size:xx-large;
     text-decoration: none;
     color:grey;
+    flex-shrink: 30;
+    min-width: 0px;
+    overflow-wrap: break-word;
   }
-  ul:hover a:hover {
+  div:hover a:hover {
     text-decoration: underline;
     color: white;
   }
-  ul a:visited {
+  div a:visited {
     color: inherit;
   }
 }
