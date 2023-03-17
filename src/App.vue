@@ -25,6 +25,6 @@ export default {
   text-align: center;
   color: #000000;
   //background-color: rgb(255, 250, 199);
-  background-image: url("@/assets/Background.png");
+  //background-image: url("@/assets/Background.png");
 }
 </style>

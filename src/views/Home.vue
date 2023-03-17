@@ -1,4 +1,6 @@
 <template>
+  <div id="canvas-container" >
+  </div>
   <div class="wrapper">
     <div v-for="project in projects" :key="project.abbreviation" class="project" :id="'project' + project.abbreviation">
       <p class="projectTitle">{{ project.name }}</p>
@@ -26,20 +28,99 @@
 <script>
 import { ref } from 'vue'
 import allProjects from '@/data/projects.js'
-import allHobbyProjects from '@/data/hobbyProjects.js'
-import allStudentProjects from '@/data/studentProjects.js'
-
+import p5 from 'p5'
+import { isFlowPredicate, variableDeclarator } from '@babel/types'
+import { pathToFileURL } from 'url'
 export default {
   setup () {
     const projects = ref(allProjects)
-    const hobbyProjects = ref(allHobbyProjects)
-    const studentProjects = ref(allStudentProjects)
-    return { projects, hobbyProjects, studentProjects }
+    return { projects }
+  },
+  mounted () {
+    // create new p5 instance
+    new p5(this.sketch);
+  },
+  methods: {
+    sketch(p) {
+      let canvas
+      let lineFollowers =[];
+      p.setup = () => {
+        canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+        canvas.parent('canvas-container'); // set the parent element of the canvas
+        p.background('#0D1821'); // set background color to white
+        lineFollowers[0] = new LineFollower(3, 6, '#FF0733 ', 0, 70, 900, 0.001, -0.0006);
+        lineFollowers[1] = new LineFollower(3, 6, '#809BCE', 1.233, 120, 600, 0.001, 0.0005);
+        lineFollowers[2] = new LineFollower(2, 6, '#75BF87', 12.3344, 30, 400, 0.009, 0.002);
+      };
+
+      p.draw = () => {
+        p.background('#0D18210f');
+
+        lineFollowers.forEach(function(lineFollower){
+          lineFollower.update();
+        })
+      };
+
+      p.windowResized = () => {
+        p.resizeCanvas(p.windowWidth, p.windowHeight);
+      }
+
+      class LineFollower {
+        constructor(speed, thickness, color, noiseOffset, offset, noiseAmplitude, noiseSpeed, angleSpeed){
+          this.speed = speed;
+          this.thickness = thickness;
+          this.color = color;
+          this.pos = new p5.Vector(p.random(p.windowWidth), p.random(p.windowHeight));
+          this.desiredPosition = new p5.Vector();
+          this.time = 0;
+          this.noiseOffset = noiseOffset;
+          this.offset = offset;
+          this.noiseAmplitude = noiseAmplitude;
+          this.noiseSpeed = noiseSpeed;
+          this.angleSpeed = angleSpeed * speed;
+        }
+        update(){
+          this.updateDesiredPosition();
+          let newPos = this.calcNewPos();
+          this.show(newPos);
+          this.pos = newPos.copy();
+        }
+        updateDesiredPosition(){
+          this.time += p.deltaTime;
+          let offsetMagnitude = this.offset + p.noise(this.noiseOffset, this.time * this.noiseSpeed) * this.noiseAmplitude;
+          console.log(offsetMagnitude);
+          let offsetAngle = this.time * this.angleSpeed;
+          this.desiredPosition.x = p.mouseX + (p.cos(offsetAngle) * offsetMagnitude)
+          this.desiredPosition.y = p.mouseY + (p.sin(offsetAngle) * offsetMagnitude)
+        }
+        calcNewPos(){
+          let moveVector = p5.Vector.sub(this.desiredPosition, this.pos);
+          let moveDistance = this.speed * p.deltaTime / 10;
+          if(moveVector.mag() > moveDistance)
+            moveVector.setMag(moveDistance);
+          return p5.Vector.add(this.pos, moveVector);
+        }
+        show(newPos){
+          p.stroke(this.color)
+          p.strokeWeight(this.thickness)
+          p.line(this.pos.x, this.pos.y, newPos.x, newPos.y);
+        }
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
+canvas {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: -1;
+  background-color: #0D1821;
+}
 .wrapper {
   display:flex;
   flex-direction: column;
