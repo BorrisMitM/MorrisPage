@@ -88,7 +88,6 @@ export default {
         updateDesiredPosition(){
           this.time += p.deltaTime;
           let offsetMagnitude = this.offset + p.noise(this.noiseOffset, this.time * this.noiseSpeed) * this.noiseAmplitude;
-          console.log(offsetMagnitude);
           let offsetAngle = this.time * this.angleSpeed;
           this.desiredPosition.x = p.mouseX + (p.cos(offsetAngle) * offsetMagnitude)
           this.desiredPosition.y = p.mouseY + (p.sin(offsetAngle) * offsetMagnitude)
