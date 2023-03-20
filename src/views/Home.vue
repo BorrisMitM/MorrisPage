@@ -11,12 +11,12 @@
         </div>
       </div>
       <div class="linkContainer" v-if="project.trailer||project.link">
-        <a class="link" v-if="project.trailer" :href="project.trailer" target="_blank">Trailer</a>
         <a class="link" v-if="project.link" :href="project.link" target="_blank">Play</a>
+        <a class="link" v-if="project.trailer" :href="project.trailer" target="_blank">Trailer</a>
       </div>
       <p class="projectText"><br>{{ project.summary }}</p>
-      <p v-if="project.contributions" class="projectText">My contributions and takeaways from this project are:</p>
       <div class="contributionContainer">
+        <h3 v-if="project.contributions" class="contributionHeader">My contributions and takeaways from this project:</h3>
         <div v-for="contribution in project.contributions"  v-bind:key="contribution" class="contribution">
           <p>-  {{ contribution }}</p>
         </div>
@@ -47,14 +47,14 @@ export default {
       p.setup = () => {
         canvas = p.createCanvas(p.windowWidth, p.windowHeight);
         canvas.parent('canvas-container'); // set the parent element of the canvas
-        p.background('#0D1821'); // set background color to white
+        p.background('#003554'); // set background color to white
         lineFollowers[0] = new LineFollower(3, 6, '#FF0733 ', 0, 70, 900, 0.001, -0.0006);
         lineFollowers[1] = new LineFollower(3, 6, '#809BCE', 1.233, 120, 600, 0.001, 0.0005);
         lineFollowers[2] = new LineFollower(2, 6, '#75BF87', 12.3344, 30, 400, 0.009, 0.002);
       };
 
       p.draw = () => {
-        p.background('#0D18210f');
+        p.background('#0035540f');
 
         lineFollowers.forEach(function(lineFollower){
           lineFollower.update();
@@ -118,25 +118,29 @@ canvas {
   top:0;
   left:0;
   z-index: -1;
-  background-color: #0D1821;
+  background-color: #003554;
 }
 .wrapper {
-  display:flex;
-  flex-direction: column;
-  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 50px;
 }
 
 .project {
   border: 1px solid;
   border-radius: .5rem;
+  border-color: #091116;
   padding: 1rem;
-  margin-top: 2rem;
   width: 40%;
   min-width: 584px;
-  background-image: url("@/assets/Panel.png");
+  //background-image: url("@/assets/Background.png");
+  background-color: #051923;
   scroll-margin-top: 90px;
+  margin-bottom: 100px;
   img {
     float: center;
     max-width: 100%;
@@ -147,11 +151,10 @@ canvas {
   }
 }
 
-.project:nth-child(odd) {
-  align-self: flex-end;
-}
-.project:nth-child(even) {
-  align-self: flex-start;
+.project:first-child{
+  width: 40%;
+  margin-right: 20%;
+  margin-left: 20%;
 }
 
 @media (max-width: 790px) {
@@ -160,18 +163,29 @@ canvas {
     min-width: auto;
     width: auto;
   }
+  .project:first-child {
+    align-self: stretch;
+    min-width: auto;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: 0%;
+  }
 }
 .projectTitle {
   font-weight: bold;
   font-size: 2.5rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0 1.3rem 0;
   overflow: break-word;
 }
-
+.contributionHeader {
+  text-align: left;
+  max-width: 530px;
+}
 .projectText {
   text-align: left;
   max-width: 530px;
   display: inline-block;
+  margin-top: 5px;
 }
 .tagContainer{
   margin: auto;
@@ -180,9 +194,13 @@ canvas {
 .tag{
   width: fit-content;
   height: 1rem;
-  padding: 5px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.6rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
   margin: 5px;
   display: inline-flex;
+  filter:saturate(60%) brightness(80%);
 }
 .tagBorder{
   color:  rgb(255, 255, 255);
@@ -225,23 +243,24 @@ canvas {
 }
 
 .linkContainer{
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .link{
   margin: 0 10px;
-  padding: 4px;
+  padding: 0.5rem 1rem;
   block-size: auto;
   font-size: xx-large;
   text-decoration: none;
-  color: grey;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #0582CA;
   border-radius: 7px;
+  border: 2px solid #ffffff;
 }
 .link:hover {
   text-decoration: underline;
+  background-color: #00A6FB;
   color: white !important;
 }
 .link:visited {
-  color: grey;
+  color: #ffffff;
 }
 </style>

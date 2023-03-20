@@ -5,7 +5,7 @@ export default [
     image: 'Morris.jpeg',
     trailer: '',
     link: '',
-    summary: 'After finishing my studies in electrical engineering, I graduated in 2022 with a degree in Digital Games with a focus on programming at the Cologne Game Lab. Afterwards I worked for neoludic, where I developed a prototype for Tiny Bookshop, and for the Cologne Game Lab, where I developed an AR learning experience for masonry students. My two favorite topics are gameplay programming and procedural generation, but I also have extensive experience in tool and system development. You can find a selection of projects I have worked on below. Enjoy your stay on my portfolio!',
+    summary: 'Hey! My name is Morris, and I love making games. It is the perfect combination of creativity and logical thinking for me. My two favorite topics are gameplay programming and procedural generation, but I also have extensive experience in tool and systems development. You can find a selection of projects I have worked on below. Enjoy your stay on my portfolio!',
     tags: '',
     contributions: ''
   },
@@ -45,9 +45,9 @@ export default [
     image: 'TrinityTactics2.png',
     trailer: 'https://www.youtube.com/watch?v=Pkf2NudyDTQ',
     link: 'https://kawanka.itch.io/trinity-tactics',
-    summary: 'Trinity Tactics is a small turn-based, multiplayer tactics game that I developed together with my friend Florian Erhard. The twist is that turns play out at the same time for both players and that you can adjust the stats of your units on the fly.',
+    summary: 'Trinity Tactics is a turn-based, multiplayer tactics game that I developed together with my friend Florian Erhard. The twist is that turns play out at the same time for both players and that you can adjust the stats of your units on the fly.',
     tags: ['Unity', 'WebGL', 'Released', 'Hobby'],
-    contributions: ['Multiplayer using Photon', 'Gamestate machine', 'The terrain generation was my bachelor thesis and combines different approaches like graph grammars, perlin noise and cellular automata.', 'Tried out a way of balancing maps by evaluating the generated map and dividing spawn areas for players based on the evaluation.']
+    contributions: ['Multiplayer using Photon', 'Gamestate machine', 'The terrain generation was part of my bachelor thesis and layers different methods like graph grammars, perlin noise and cellular automata.', 'Tried out a way of balancing maps by evaluating the generated map and dividing spawn areas for players based on the evaluation.']
   },
   {
     name: 'Mülheim Illustriert',

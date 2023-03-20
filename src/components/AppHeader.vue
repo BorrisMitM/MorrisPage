@@ -24,7 +24,8 @@ header {
 
   padding: .5rem 0rem;
   //background-color: rgba(128,128,128,0.7);
-  background-image: url("@/assets/Header2.png");
+  //background-image: url("@/assets/Header2.png");
+  background-color: #051923;
   background-size: contain;
 }
 
@@ -51,6 +52,7 @@ nav {
   }
   div:hover a:hover {
     text-decoration: underline;
+    text-decoration-color: #00A6FB;
     color: white;
   }
   div a:visited {

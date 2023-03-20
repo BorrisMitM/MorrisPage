@@ -28,7 +28,8 @@ footer{
   margin-top: 50px;
   padding-top: 30px;
   padding-bottom: 5px;
-  background-image: url("@/assets/Panel.png");
+  //background-image: url("@/assets/Panel.png");
+  background-color: #051923;
   background-size: contain;
   border: 1px solid black;
 }
