@@ -17,7 +17,7 @@ export default [
     link: 'https://store.steampowered.com/app/2133760/Tiny_Bookshop/',
     summary: 'Tiny Bookshop is a cozy game in which the player moves to a small town near the sea and sells used books from the back of their trailer. I joined the team at neoludic for the prototype development where we built up essential game systems and tried out different mechanics for production.',
     tags: ['Unity', 'Professional'],
-    contributions: ['Procedural character generation', 'Creating tools for and developing the narrative system', 'Character movement and AI', 'Save/Load system', 'Added controller support for parts of the game', 'Inventory system']
+    contributions: ['Procedural character generation', 'Creating tools for and developing the narrative system', 'Character movement and AI state machines', 'Save/Load system', 'Added controller support with Rewired', 'Inventory system']
   },
   {
     name: 'On My Way',
@@ -27,7 +27,7 @@ export default [
     link: 'https://www.greenerasmus.org/on-my-way',
     summary: 'On My Way started as a student project for the Cologne Game Lab and after the semester finished. Green Erasmus decided to continue development with the team. I took over the programming role and worked simultaneously on On My Way and Small Steps. The game is about ecological traveling and highlights on the different modes of transportation and their impact on the environment.',
     tags: ['Unity', 'University', 'WebGL', 'Released', 'Professional'],
-    contributions: ['Dynamic UI programming', 'Save/Load system', 'Unity\'s integrated localization system', 'Took over the project after the student phase and had to work with a foreign code base']
+    contributions: ['Dynamic UI programming', 'Save/Load system', 'Unity\'s integrated localization system', 'Continued work on a foreign code base']
   },
   {
     name: 'Small Steps',
@@ -37,7 +37,7 @@ export default [
     link: 'https://www.greenerasmus.org/small-steps',
     summary: 'Small Steps also started as a student project at the Cologne Game Lab. We also continued to develop it after the semester together with Green Erasmus. The game is about Nova who is on their Erasmus exchange year and discovers a weird parallel world in which no environmental awareness exists. They then help their counterpart in the other world to implement some ecological behaviors. You can play it here.',
     tags: ['Unity', 'University', 'WebGL', 'Released', 'Professional'],
-    contributions: ['Content creation tools for designers', 'Timeline extensions', 'Custom dialog system including localization']
+    contributions: ['Content creation tools for designers including Unity\'s Timeline system', 'Custom dialog mechanic, in which you sort conversations', 'Custom localization solution']
   },
   {
     name: 'Trinity Tactics',
@@ -47,13 +47,13 @@ export default [
     link: 'https://kawanka.itch.io/trinity-tactics',
     summary: 'Trinity Tactics is a turn-based, multiplayer tactics game that I developed together with my friend Florian Erhard. The twist is that turns play out at the same time for both players and that you can adjust the stats of your units on the fly.',
     tags: ['Unity', 'WebGL', 'Released', 'Hobby'],
-    contributions: ['Multiplayer using Photon', 'Gamestate machine', 'The terrain generation was part of my bachelor thesis and layers different methods like graph grammars, perlin noise and cellular automata.', 'Tried out a way of balancing maps by evaluating the generated map and dividing spawn areas for players based on the evaluation.']
+    contributions: ['Multiplayer using Photon', 'Gamestate system that plays all actions according to input using the command pattern', 'Terrain generation was developed during my bachelor thesis. It layers different approaches like graph grammars, perlin noise and cellular automata.', 'Tried out a way of balancing maps by evaluating the generated map and dividing spawn areas for players based on that evaluation.']
   },
   {
     name: 'Mülheim Illustriert',
     abbreviation: 'MI',
     image: 'MI2.png',
-    trailer: '',
+    trailer: 'https://kulturbunker-muelheim.de/event/muelheim-illustriert-2/',
     link: '',
     summary: 'A small virtual exhibition for the Kulturbunker Köln-Mülheim. Here visitors could experience an art gallery online while physical exhibitions were not possible.',
     tags: ['Unity', 'WebGL', 'Released', 'Professional'],
@@ -67,7 +67,7 @@ export default [
     link: '',
     summary: 'During my internship at Tritrie Games, I worked on the prototype of the 2D platformer Cage Against The Machine. This was especially exciting for me because I was able to take the time to learn the ins and outs of Unreal Engine.',
     tags: ['Unreal', 'Professional', 'C++'],
-    contributions: ['First Unreal project', 'Learned both Blueprints and C++', 'Used the GameplayAbility system', 'Rapidly prototyped different platformer mechanics', 'Polished the character controller', 'Worked on custom shaders to try out different looks', 'Dynamic background music system that changed the intensity depending on the state of the game.']
+    contributions: ['First Unreal project in which I was able to learn the ins and outs of Unreal in a professional environment', 'Learned both Blueprints and C++', 'Used the GameplayAbility system', 'Rapidly prototyped different platformer mechanics', 'Polished the character controller using custom MovementComponents', 'Worked on custom shaders to try out different stylized looks, like toon shading or pixelation', 'Dynamic background music system that changed the intensity depending on the state of the game.']
   },
   {
     name: 'Side Effects - of being human',

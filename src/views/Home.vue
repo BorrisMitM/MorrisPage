@@ -17,9 +17,11 @@
       <p class="projectText"><br>{{ project.summary }}</p>
       <div class="contributionContainer">
         <h3 v-if="project.contributions" class="contributionHeader">My contributions and takeaways from this project:</h3>
-        <div v-for="contribution in project.contributions"  v-bind:key="contribution" class="contribution">
-          <p>-  {{ contribution }}</p>
-        </div>
+        <ul>
+          <li v-for="contribution in project.contributions"  v-bind:key="contribution" class="contribution">
+            {{ contribution }}
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -237,6 +239,9 @@ canvas {
   margin: 0 auto;
   max-width: 530px;
   text-align: left;
+  ul {
+    list-style-position: outside;
+  }
 }
 .contribution{
   text-align: left;
