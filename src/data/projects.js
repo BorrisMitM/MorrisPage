@@ -17,7 +17,7 @@ export default [
     link: 'https://store.steampowered.com/app/2133760/Tiny_Bookshop/',
     summary: 'Tiny Bookshop is a cozy game in which the player moves to a small town near the sea and sells used books from the back of their trailer. I joined the team at neoludic for the prototype development where we built up essential game systems and tried out different mechanics for production.',
     tags: ['Unity', 'Professional'],
-    contributions: ['Procedural character generation', 'Creating tools for and developing the narrative system', 'Character movement and AI state machines', 'Save/Load system', 'Added controller support with Rewired', 'Inventory system']
+    contributions: ['Procedural character generation', 'Creating tools for and developing the narrative system', 'Character movement and AI state machines', 'Save/Load system', 'Added controller support with Rewired', 'Inventory system', 'Learned a lot about refactoring prototype code into scaling code, which can be used in a production environment']
   },
   {
     name: 'On My Way',
