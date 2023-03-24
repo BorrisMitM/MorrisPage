@@ -2,11 +2,23 @@
   <div id="canvas-container" >
   </div>
   <div class="wrapper">
-    <div v-for="project in projects" :key="project.abbreviation" class="project" :id="'project' + project.abbreviation">
+    <div class="project" id='aboutme'>
+      <p class="projectTitle">{{ aboutme.name }}</p>
+      <img :alt="aboutme.name + ' logo'" :src="require('../assets/' + aboutme.image)" height="600">
+      <p class="projectText"><br>{{ aboutme.summary }}</p>
+    </div>
+    <p class="projectHeader">My Projects</p>
+    <div class="tagbar">
+      <p>Filter: </p>
+      <div v-for="tag in allTags"  v-bind:key="tag" v-bind:class="tagClass(tag) + ' tag tagBorder tag' + tag" @click="$event=>toggleTag(tag)">
+        {{ tag }}
+      </div>
+    </div>
+    <div v-for="project in filteredProjects" :key="project.abbreviation" class="project" :id="'project' + project.abbreviation">
       <p class="projectTitle">{{ project.name }}</p>
       <img :alt="project.name + ' logo'" :src="require('../assets/' + project.image)" height="600">
       <div class="tagContainer" v-if="project.tags">
-        <div v-for="tag in project.tags"  v-bind:key="tag" v-bind:class="'tag tagBorder tag' + tag">
+        <div v-for="tag in project.tags"  v-bind:key="tag" v-bind:class="tagClass(tag) + ' tag tagBorder tag' + tag" @click="$event=>toggleTag(tag)">
           {{ tag }}
         </div>
       </div>
@@ -29,14 +41,38 @@
 
 <script>
 import { ref } from 'vue'
+import { computed } from "vue";
 import allProjects from '@/data/projects.js'
+import aboutMe from '@/data/aboutme.js'
 import p5 from 'p5'
 import { isFlowPredicate, variableDeclarator } from '@babel/types'
 import { pathToFileURL } from 'url'
 export default {
   setup () {
     const projects = ref(allProjects)
-    return { projects }
+    const aboutme = ref(aboutMe[0])
+    const filterTags = ref([])
+    const allTags = ref(['Unity', 'Unreal', 'C++', 'Professional', 'WebGL', 'University', 'Released', 'Hobby'])
+    const filteredProjects = computed (() => {
+      if(filterTags.length == 0) return projects;
+      return projects.value.filter(item => {
+        return filterTags.value.every(tag => item.tags.includes(tag))
+      })
+    })
+    const toggleTag = (tag) => {
+      if(filterTags.value.includes(tag)){
+        const index = filterTags.value.indexOf(tag)
+        if (index !== -1) {
+          filterTags.value.splice(index, 1)
+        }
+      }
+      else filterTags.value.push(tag);
+    }
+    const tagClass = (tag) => {
+      return filterTags.value.includes(tag) ? 'tagHighlight' : 'tagGreyed'
+    }
+    
+    return { projects, filteredProjects, toggleTag, tagClass, aboutme, allTags }
   },
   mounted () {
     // create new p5 instance
@@ -72,7 +108,7 @@ export default {
           this.speed = speed;
           this.thickness = thickness;
           this.color = color;
-          this.pos = new p5.Vector(p.random(p.windowWidth), p.random(p.windowHeight));
+          this.pos = new p5.Vector(p.random(p.windowWidth/2), p.random(p.windowHeight));
           this.desiredPosition = new p5.Vector();
           this.time = 0;
           this.noiseOffset = noiseOffset;
@@ -132,6 +168,25 @@ canvas {
   margin-top: 50px;
 }
 
+.projectHeader {
+  font-weight: bold;
+  font-size: 5rem;
+  font-variant: small-caps;
+  text-decoration: underline;
+  text-decoration-color: #00A6FB;
+  text-shadow:  8px 0px 5px #051923;
+  margin: 0.5rem 0 1.3rem 0;
+}
+
+.tagbar {
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 3rem;
+  p {
+    display: inline-flex;
+  }
+}
+
 .project {
   border: 1px solid;
   border-radius: .5rem;
@@ -155,8 +210,8 @@ canvas {
 
 .project:first-child{
   width: 40%;
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 0%;
+  margin-left: 50%;
 }
 
 @media (max-width: 790px) {
@@ -175,7 +230,8 @@ canvas {
 }
 .projectTitle {
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-variant: small-caps;
   margin: 0.5rem 0 1.3rem 0;
   overflow: break-word;
 }
@@ -202,13 +258,26 @@ canvas {
   padding-right: 0.7rem;
   margin: 5px;
   display: inline-flex;
+
+  button{
+    flex-basis: 100%;
+  }
+}
+.tag:hover{
+  cursor: pointer;
+  filter:saturate(100%) brightness(100%);
+}
+.tagHighlight {
+  filter:saturate(100%) brightness(100%);
+}
+.tagGreyed {
   filter:saturate(60%) brightness(80%);
 }
 .tagBorder{
   color:  rgb(255, 255, 255);
   border-radius: 10px;
-  border: 2px solid rgb(111, 111, 111);
-  //text-shadow: 1px 1px #505050;
+  border: 2px solid rgb(255, 255, 255);
+  text-shadow: 1px 1px #505050;
 }
 .tagUnity{
   background-color: rgb(92, 146, 255);

@@ -17,7 +17,7 @@
 header {
   //display: flex;
   border-bottom: 3px solid #000000;
-  height: 50px;
+  height: fit-content;
   z-index: 100;
   position:sticky;
   top: 0;
