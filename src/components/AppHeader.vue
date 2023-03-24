@@ -5,7 +5,7 @@
       <div>
         <a href="#">Home</a>
         <div></div>
-        <a href="#projectTBS">Projects</a>
+        <a href="#Projects">Projects</a>
         <div></div>
         <a href="#footer">Contact</a>
       </div>

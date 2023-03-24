@@ -7,7 +7,7 @@
       <img :alt="aboutme.name + ' logo'" :src="require('../assets/' + aboutme.image)" height="600">
       <p class="projectText"><br>{{ aboutme.summary }}</p>
     </div>
-    <p class="projectHeader">My Projects</p>
+    <p class="projectHeader" id="Projects">My Projects</p>
     <div class="tagbar">
       <p>Filter: </p>
       <div v-for="tag in allTags"  v-bind:key="tag" v-bind:class="tagClass(tag) + ' tag tagBorder tag' + tag" @click="$event=>toggleTag(tag)">
@@ -176,6 +176,7 @@ canvas {
   text-decoration-color: #00A6FB;
   text-shadow:  8px 0px 5px #051923;
   margin: 0.5rem 0 1.3rem 0;
+  scroll-margin-top: 90px;
 }
 
 .tagbar {
@@ -196,7 +197,6 @@ canvas {
   min-width: 584px;
   //background-image: url("@/assets/Background.png");
   background-color: #051923;
-  scroll-margin-top: 90px;
   margin-bottom: 100px;
   img {
     float: center;
