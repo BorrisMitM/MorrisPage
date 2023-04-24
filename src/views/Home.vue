@@ -7,7 +7,7 @@
       <img :alt="aboutme.name + ' logo'" :src="require('../assets/' + aboutme.image)" height="600">
       <p class="projectText"><br>{{ aboutme.summary }}</p>
     </div>
-    <p class="projectHeader" id="Projects">My Projects</p>
+    <p class="header" id="Projects">Projects</p>
     <div class="tagbar">
       <p>Filter: </p>
       <div v-for="tag in allTags"  v-bind:key="tag" v-bind:class="tagClass(tag) + ' tag tagBorder tag' + tag" @click="$event=>toggleTag(tag)">
@@ -81,26 +81,89 @@ export default {
   methods: {
     sketch(p) {
       let canvas
-      let lineFollowers =[];
+      let hexes = [];
+      let depth = 0;
+      let depthIncrease = 0.003;
+      const colors = ['#00a6fb','#0582ca','#006494','#003554','#051923']
+      const noiseScale = 0.023;
+      let numRows = 40;
+      let numCols = 40;
+      const cellSize = 60;
+      const width = cellSize * p.sqrt(3) / 2;
+      const rowOffset = width / 2;
+      const radius = cellSize / 2;
       p.setup = () => {
         canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+        p.strokeWeight(1)
         canvas.parent('canvas-container'); // set the parent element of the canvas
-        p.background('#003554'); // set background color to white
-        lineFollowers[0] = new LineFollower(3, 6, '#FF0733 ', 0, 70, 900, 0.001, -0.0006);
-        lineFollowers[1] = new LineFollower(3, 6, '#809BCE', 1.233, 120, 600, 0.001, 0.0005);
-        lineFollowers[2] = new LineFollower(2, 6, '#75BF87', 12.3344, 30, 400, 0.009, 0.002);
+        createHexGrid();
       };
-
-      p.draw = () => {
-        p.background('#0035540f');
-
-        lineFollowers.forEach(function(lineFollower){
-          lineFollower.update();
-        })
+      
+      p.draw = () => {    
+        p.background(0);
+        depth += depthIncrease;
+        for (let i = 0; i < numRows; i++) {
+          for (let j = 0; j < numCols; j++) {
+            let index = i+numRows*j;
+            const x = hexes[index].x;
+            const y = hexes[index].y;
+            //let colorID = p.floor(5 * p.noise(x * noiseScale,y * noiseScale,depth));
+            let alpha = p.hex(p.floor(p.noise(x * noiseScale,y * noiseScale,depth) * 255), 2);
+            let newColor = '#00a6fb' + alpha;
+            hexes[index].color = newColor;//colors[colorID];
+          }
+        }
+        //hightlightMouseHover();
+        for (let i = 0; i < hexes.length; i++) {
+          hexes[i].show();
+        }
       };
 
       p.windowResized = () => {
         p.resizeCanvas(p.windowWidth, p.windowHeight);
+        createHexGrid();
+      }
+
+      function createHexGrid() {
+        hexes= [];
+        numCols = p.ceil(p.windowHeight / cellSize * 4 / 3 + 1 );
+        numRows = p.ceil(p.windowWidth / width);
+        for (let i = 0; i < numRows; i++) {
+          for (let j = 0; j < numCols; j++) {
+            const x = i * width + (j % 2) * rowOffset;
+            const y = j * cellSize * 0.75;
+            let colorID = p.floor(5 * p.noise(x,y,depth));
+            hexes[i+numRows*j] = new Hex(x, y, radius, colorID);
+          }
+        }
+      }
+
+      function hightlightMouseHover(){
+        let y = Math.floor((p.mouseY + radius) / cellSize / 0.75);
+        let x = Math.floor((p.mouseX + rowOffset - (y % 2) * rowOffset) / width);
+        let index = x+numRows*y;
+        if(index >= 0 && index < hexes.length)
+          hexes[index].color = 'ff0000';
+      }
+
+      class Hex {
+        constructor(x,y,radius, colorID){
+          this.x = x;
+          this.y = y;
+          this.radius = radius;
+          this.color = colors[colorID]
+        }
+        show(){
+          p.fill(this.color);
+          p.beginShape();
+          for (let i = 0; i < 6; i++) {
+            const angle = p.TWO_PI / 6 * (i + 0.5) ;
+            const px = this.x + p.cos(angle) * this.radius;
+            const py = this.y + p.sin(angle) * this.radius;
+            p.vertex(px, py);
+          }
+          p.endShape(p.CLOSE);
+        }
       }
 
       class LineFollower {
@@ -168,7 +231,7 @@ canvas {
   margin-top: 50px;
 }
 
-.projectHeader {
+.header {
   font-weight: bold;
   font-size: 5rem;
   font-variant: small-caps;
@@ -198,6 +261,7 @@ canvas {
   //background-image: url("@/assets/Background.png");
   background-color: #051923;
   margin-bottom: 100px;
+  box-shadow:10px 10px #051923bc;
   img {
     float: center;
     max-width: 100%;
