@@ -25,7 +25,7 @@ export default [
     image: 'SmallSteps.png',
     trailer: '',
     link: 'https://www.greenerasmus.org/small-steps',
-    summary: 'Small Steps also started as a student project at the Cologne Game Lab. We also continued to develop it after the semester together with Green Erasmus. The game is about Nova who is on their Erasmus exchange year and discovers a weird parallel world in which no environmental awareness exists. They then help their counterpart in the other world to implement some ecological behaviors. You can play it here.',
+    summary: 'Small Steps also started as a student project at the Cologne Game Lab. We also continued to develop it after the semester together with Green Erasmus. The game is about Nova who is on their Erasmus exchange year and discovers a weird parallel world in which no environmental awareness exists. They then help their counterpart in the other world to implement some ecological behaviors.',
     tags: ['Unity', 'University', 'WebGL', 'Released', 'Professional'],
     contributions: ['Content creation tools for designers including Unity\'s Timeline system', 'Custom dialog mechanic, in which you sort conversations', 'Custom localization solution']
   },
@@ -57,7 +57,7 @@ export default [
     link: '',
     summary: 'During my internship at Tritrie Games, I worked on the prototype of the 2D platformer Cage Against The Machine. This was especially exciting for me because I was able to take the time to learn the ins and outs of Unreal Engine.',
     tags: ['Unreal', 'Professional', 'C++'],
-    contributions: ['First Unreal project in which I was able to learn the ins and outs of Unreal in a professional environment', 'Learned both Blueprints and C++', 'Used the GameplayAbility system', 'Rapidly prototyped different platformer mechanics', 'Polished the character controller using custom MovementComponents', 'Worked on custom shaders to try out different stylized looks, like toon shading or pixelation', 'Dynamic background music system that changed the intensity depending on the state of the game.']
+    contributions: ['First Unreal project in which I was able to learn how to work in the engine in a professional environment', 'Learned both Blueprints and C++', 'Used the GameplayAbility system', 'Rapidly prototyped different platformer mechanics', 'Polished the character controller using custom MovementComponents', 'Worked on custom shaders to try out different stylized looks, like toon shading or pixelation', 'Dynamic background music system that changed the intensity depending on the state of the game.']
   },
   {
     name: 'Side Effects - of being human',
